@@ -7,26 +7,36 @@
 
 //メソッド＝＞データ型にバンドルされた関数
 /*データ型の外にfuncを定義する*/
-package main 
+
+/*基本構文
+type 構造体名 struct {
+    この構造体型に含めたいデータを書いていく
+    このデータが各々フィールド呼ばれる
+}
+
+変数 := new(構造体名)で、構造体分の領域をメモリに確保、初期化をしてポインタを返す
+
+*/
+package main
 
 import "fmt"
 
-type System struct {
-    serverSide string
-    frontEnd string 
-    dataBase string 
+type person struct {
+	name string
+	age int
 }
 
-func main()  {
-    //通常のnew
-    s1 := new(System)
-    s1.serverSide = "Go"
-    s1.frontEnd = "JavaScript"
-    s1.dataBase = "MySQL"
-    fmt.Println(s1)
 
-    //値を与えながらnew
-    s2 := System{"Java","frontEnd","Oracle"}
-     fmt.Println(s2)
+func main() {
+	//personを生成して、myに代入
+	my := new(person)
+	//meのデータを埋めていく
+	my.name = "sekky"
+	my.age = 26
+	fmt.Println(my)
+
+	//リテラルで生成
+	my2 := person{"sekky2", 27}
+	fmt.Println(my2)
 }
 
