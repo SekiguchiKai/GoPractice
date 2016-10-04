@@ -19,8 +19,8 @@ func (Goku *Saiyazin) GenkiDama(rival Saiyazin) {
 	rival.hp--
 }
 
-func (Bezita Saiyazin) Printout() {
-	fmt.Printf("%s%d\n",  "ベージタのHPは", Bezita.hp)
+func (rival Saiyazin) Printout() {
+	fmt.Printf("%s%d\n",  "ベージタのHPは", rival.hp)
 }
 
 func (Nappa Saiyazin) Printout2() {
@@ -45,7 +45,7 @@ func main()  {
 	Bezita.Printout()
 
 
-	Bezita.Printout2()
+	Nappa.Printout2()
 	fmt.Println("悟空元気玉三連ちゃん")
 	Goku.GenkiDama(Nappa)
 	Goku.GenkiDama(Nappa)
